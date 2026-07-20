@@ -2,7 +2,7 @@
     <div class="container-x grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4">
         {{-- Brand --}}
         <div class="lg:col-span-1">
-            <div class="inline-block bg-white p-3">
+            <div class="inline-block rounded-xl bg-white p-3">
                 <img src="{{ asset('storage/site/logo.png') }}" alt="{{ $site->company_name }}" class="h-16 w-auto">
             </div>
             <p class="mt-4 text-sm leading-relaxed text-neutral-400">
