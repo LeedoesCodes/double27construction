@@ -10,9 +10,13 @@ if [ ! -f .env ]; then
 fi
 
 # --- Application key ---
-if [ -z "$APP_KEY" ]; then
-    php artisan key:generate --force
-fi
+# Laravel needs a "base64:"-prefixed key. If APP_KEY is empty OR set to an
+# invalid value (e.g. a platform-generated random string), unset it and
+# generate a proper key into .env (which artisan then reads).
+case "$APP_KEY" in
+    base64:*) : ;;
+    *) unset APP_KEY; php artisan key:generate --force ;;
+esac
 
 # --- Public URL (so assets/images load on the deployed domain) ---
 if [ -n "$RENDER_EXTERNAL_URL" ]; then
