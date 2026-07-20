@@ -1,0 +1,19 @@
+# Render Blueprint — free staging deploy for the Double 27 demo site.
+# In Render: New +  ->  Blueprint  ->  connect this repo. It reads this file.
+services:
+  - type: web
+    name: double27-demo
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    healthCheckPath: /up
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        generateValue: true
+      - key: LOG_CHANNEL
+        value: stderr

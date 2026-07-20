@@ -1,0 +1,60 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views';
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-display: 'Oswald', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+    /* Bold industrial palette */
+    --color-ink-950: #0a0a0b;
+    --color-ink-900: #111113;
+    --color-ink-850: #16161a;
+    --color-ink-800: #1d1d22;
+    --color-ink-700: #2a2a31;
+    --color-ink-600: #3a3a44;
+
+    --color-hazard-400: #ffb020;
+    --color-hazard-500: #f97316;
+    --color-hazard-600: #ea580c;
+}
+
+@layer base {
+    body {
+        @apply bg-ink-950 text-neutral-300 antialiased;
+    }
+
+    h1, h2, h3, h4 {
+        font-family: var(--font-display);
+        letter-spacing: 0.01em;
+    }
+}
+
+@layer components {
+    .container-x {
+        @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+    }
+
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 bg-hazard-500 px-6 py-3
+               font-display text-sm font-semibold uppercase tracking-wider text-ink-950
+               transition hover:bg-hazard-400;
+    }
+
+    .btn-outline {
+        @apply inline-flex items-center justify-center gap-2 border border-ink-600 px-6 py-3
+               font-display text-sm font-semibold uppercase tracking-wider text-neutral-200
+               transition hover:border-hazard-500 hover:text-hazard-400;
+    }
+
+    .eyebrow {
+        @apply font-display text-sm font-semibold uppercase tracking-[0.2em] text-hazard-500;
+    }
+
+    .section {
+        @apply py-20 sm:py-28;
+    }
+}
