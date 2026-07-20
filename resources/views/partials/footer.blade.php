@@ -2,9 +2,8 @@
     <div class="container-x grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4">
         {{-- Brand --}}
         <div class="lg:col-span-1">
-            <div class="flex items-center gap-3">
-                <span class="flex h-9 w-9 items-center justify-center bg-hazard-500 font-display text-lg font-bold text-ink-950">27</span>
-                <span class="font-display text-lg font-semibold uppercase tracking-wide text-white">Double 27</span>
+            <div class="inline-block bg-white p-3">
+                <img src="{{ asset('storage/site/logo.png') }}" alt="{{ $site->company_name }}" class="h-16 w-auto">
             </div>
             <p class="mt-4 text-sm leading-relaxed text-neutral-400">
                 {{ $site->tagline ?? 'Quality construction aggregates and expert concreting services in the Philippines.' }}

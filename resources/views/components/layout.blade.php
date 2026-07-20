@@ -9,6 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0a0a0b">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 
     @php($pageTitle = $title !== '' ? $title.' — '.$site->company_name : $site->company_name)
     <title>{{ $pageTitle }}</title>
